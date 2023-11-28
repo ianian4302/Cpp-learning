@@ -7,8 +7,12 @@ void print_sticks(int max_price, int k, vector<int> &price_of_sticks, vector<vec
     cout << max_price << endl;
     cout << sticks[k].size() << endl;
     for (int i = 0; i < sticks[k].size(); i++)
-        cout << sticks[k][i] << " ";
-    cout << " = " << k << endl;
+    {
+        cout << sticks[k][i];
+        if (i != sticks[k].size() - 1)
+            cout << "+";
+    }
+    cout << "=" << k << endl;
 };
 
 void print_vector(vector<int> &v)
@@ -60,11 +64,11 @@ int main()
     }
     print_sticks(max_price[k], k, price_of_sticks, sticks);
 
-    //print all sticks
-    // for (int i = 0; i < sticks.size(); i++){
-    //     cout << "sticks[" << i << "] = ";
-    //     print_vector(sticks[i]);
-    // }
+    // print all sticks
+    //  for (int i = 0; i < sticks.size(); i++){
+    //      cout << "sticks[" << i << "] = ";
+    //      print_vector(sticks[i]);
+    //  }
 }
 
 // test case

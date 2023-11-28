@@ -12,11 +12,23 @@ void get_cargo_data(int n, vector<int> &weight, vector<int> &volume, vector<int>
     for (int i = 0; i < n; i++)
         cin >> volume[i];
 }
+
+bool is_in(int n, vector<int> &cargo)
+{
+    for (int i = 0; i < cargo.size(); i++)
+    {
+        if (n == cargo[i])
+            return true;
+    }
+    return false;
+}
+
 int main()
 {
     // note that n <= 100, w <= 1000, v <= 1000
     int n, w, v;
-    cin >> n >> w >> v;
+    cin >> n;
+    cin >> w >> v;
     vector<int> weight(n, 0);
     vector<int> volume(n, 0);
     vector<int> value(n, 0);
@@ -37,6 +49,8 @@ int main()
                 {
                     if (max < value[k - 1] + max_value[i - weight[k - 1]][j - volume[k - 1]])
                     {
+                        if (is_in(k, cargo[i - weight[k - 1]][j - volume[k - 1]]))
+                            continue;
                         max = value[k - 1] + max_value[i - weight[k - 1]][j - volume[k - 1]];
                         if (i == weight[k - 1] && j == volume[k - 1])
                         {
@@ -57,7 +71,7 @@ int main()
     }
     cout << max_value[w][v] << endl;
     cout << cargo[w][v].size() << endl;
-    //sort the cargo
+    // sort the cargo
 
     sort(cargo[w][v].begin(), cargo[w][v].end());
 

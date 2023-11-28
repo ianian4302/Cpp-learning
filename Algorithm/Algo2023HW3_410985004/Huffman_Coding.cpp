@@ -85,18 +85,22 @@ int main()
     huffman_tree_decode(root, "");
 
     // print
-    cout << "|";
+    // cout << "|";
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << setw(5) << symbol[i] << "|";
+    // }
+    // cout << endl;
+    // cout << "|";
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << setw(5) << code_of_symbol[i] << "|";
+    // }
+    // cout << endl;
     for (int i = 0; i < n; i++)
     {
-        cout << setw(5) << symbol[i] << "|";
+        cout << code_of_symbol[i] << " ";
     }
-    cout << endl;
-    cout << "|";
-    for (int i = 0; i < n; i++)
-    {
-        cout << setw(5) << code_of_symbol[i] << "|";
-    }
-    cout << endl;
     return 0;
 }
 /*
