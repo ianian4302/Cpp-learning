@@ -57,9 +57,9 @@
 
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-        "c": "cd $dir && gcc $fileName -o $workspaceRoot/build/$fileNameWithoutExt && $workspaceRoot/build/$fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileDirname/build/$fileNameWithoutExt && $fileDirname/build/$fileNameWithoutExt",
         "zig": "zig run",
-        "cpp": "cd $dir && g++ $fileName -o $workspaceRoot/build/$fileNameWithoutExt && $workspaceRoot/build/$fileNameWithoutExt", 
+        "cpp": "cd $dir && g++ $fileName -o $fileDirname/build/$fileNameWithoutExt && $fileDirname/build/$fileNameWithoutExt", 
         "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
         "python": "python -u",
