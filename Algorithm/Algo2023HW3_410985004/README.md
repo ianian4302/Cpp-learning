@@ -1,3 +1,7 @@
-# Algorithm 第三次程式作業
+# Algorithm 第三次作業
 
-1. 123
+* 學號：410985004
+* 姓名：陳文彥
+* 系級：資工系三年級
+* 語言：C++
+* 平台：Visual Studio Code
