@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 void print_sticks(int max_price, int k, vector<int> &price_of_sticks, vector<vector<int>> &sticks)
@@ -7,12 +8,14 @@ void print_sticks(int max_price, int k, vector<int> &price_of_sticks, vector<vec
     cout << max_price << endl;
     cout << sticks[k].size() << endl;
     cout << k << "=";
+  	cout << k << "=";
     for (int i = 0; i < sticks[k].size(); i++)
     {
         cout << sticks[k][i];
         if (i != sticks[k].size() - 1)
             cout << "+";
     }
+  cout << endl;
 };
 
 void print_vector(vector<int> &v)
@@ -62,6 +65,7 @@ int main()
         }
         max_price[i] = max;
     }
+  	sort(sticks[k].begin(), sticks[k].end());
     print_sticks(max_price[k], k, price_of_sticks, sticks);
+  	return 0;
 }
-
