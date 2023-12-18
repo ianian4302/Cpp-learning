@@ -10,7 +10,8 @@ vector<vector<float>> get_graph(int n, int m)
     vector<vector<float>> graph(n + 1, vector<float>(n + 1, INT_MAX));
     for (int i = 0; i < m; i++)
     {
-        int u, v, w;
+        int u, v;
+        float w;
         cin >> u >> v >> w;
         graph[u][v] = w;
     }
