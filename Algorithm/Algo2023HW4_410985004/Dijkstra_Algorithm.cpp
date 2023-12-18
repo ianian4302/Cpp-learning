@@ -1,22 +1,24 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <climits>
 
 using namespace std;
 
-vector<vector<int>> get_graph(int n, int m)
+vector<vector<float>> get_graph(int n, int m)
 {
-    vector<vector<int>> graph(n + 1, vector<int>(n + 1, -1));
+    vector<vector<float>> graph(n + 1, vector<float>(n + 1, -1));
     for (int i = 0; i < m; i++)
     {
-        int u, v, w;
+        int u, v;
+        float w;
         cin >> u >> v >> w;
         graph[u][v] = w;
     }
     return graph;
 }
 
-int get_min(vector<bool> &visited, vector<int> distance)
+int get_min(vector<bool> &visited, vector<float> distance)
 {
     int min = INT_MAX;
     int min_index = -1;
@@ -35,11 +37,11 @@ int main()
 {
     int n, m;
     cin >> n >> m;
-    vector<vector<int>> graph = get_graph(n, m);
+    vector<vector<float>> graph = get_graph(n, m);
     int start;
     cin >> start;
     vector<int> parent(n + 1, -1);
-    vector<int> distance(n + 1, INT_MAX);
+    vector<float> distance(n + 1, INT_MAX);
     vector<bool> visited(n + 1, false);
     distance[start] = 0;
 
@@ -57,15 +59,17 @@ int main()
         }
     }
     parent[start] = 0;
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i < n; i++)
     {
         cout << distance[i] << " ";
     }
+    cout << distance[n];
     cout << endl;
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i < n; i++)
     {
         cout << parent[i] << " ";
     }
+    cout << parent[n];
     cout << endl;
     return 0;
 }

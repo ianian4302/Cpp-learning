@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+// #define INT_MAX 10e6
+
 using namespace std;
 
 vector<vector<int>> get_graph(int n, int m)
@@ -17,7 +19,7 @@ vector<vector<int>> get_graph(int n, int m)
     return graph;
 }
 
-int get_min(vector<int> &key, vector<bool> &visited)
+int get_min(vector<float> &key, vector<bool> &visited)
 {
     int min = INT_MAX;
     int min_index = -1;
@@ -36,7 +38,7 @@ void prim(int start, vector<vector<int>> &graph)
 {
     int n = graph.size() - 1;
     vector<int> predecessor(n + 1, -1);
-    vector<int> key(n + 1, INT_MAX);
+    vector<float> key(n + 1, INT_MAX);
     vector<bool> visited(n + 1, false);
     key[start] = 0;
     predecessor[start] = 0;
@@ -53,10 +55,11 @@ void prim(int start, vector<vector<int>> &graph)
             }
         }
     }
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i < n; i++)
     {
         cout << predecessor[i] << " ";
     }
+    cout << predecessor[n];
     cout << endl;
     int sum = 0;
     for (int i = 1; i <= n; i++)
